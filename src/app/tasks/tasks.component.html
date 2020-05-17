@@ -1,0 +1,20 @@
+<!--<div class="container">
+  <p></p>
+  <button class="btn btn-danger" (click)="onNewTask()" *ngIf="authService.isAdmin()">New Task</button>
+  <table class="table table-striped">
+    <tr>
+      <th>ID</th><th>TaskName</th>
+    </tr>
+    <tr *ngFor="let t of tasks">
+      <td>{{t.id}}</td>
+      <td>{{t.taskName}}</td>
+
+    </tr>
+  </table>
+
+</div>-->
+
+<div class="container">
+<h1 *ngIf="authService.isAdmin()" style="color: red">Admin</h1>
+<h1 *ngIf="authService.isUser()">User</h1>
+</div >
