@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
-import {AuthenticationService} from '../services/authentication.service';
-import {Router} from '@angular/router';
+import { Router } from '@angular/router';
+import { AuthServiceService } from './auth-service.service';
 
 @Component({
   selector: 'app-root',
@@ -8,9 +8,8 @@ import {Router} from '@angular/router';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'AuthApp';
-
-  constructor(private  authService: AuthenticationService, private  router: Router) {
+  title = 'angular8-springboot-client';
+  constructor(private authService: AuthServiceService, private router: Router) {
   }
   onLogout() {
     this.authService.logout();

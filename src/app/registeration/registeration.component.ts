@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import {AuthenticationService} from '../../services/authentication.service';
+import { AuthServiceService } from '../auth-service.service';
 
 @Component({
   selector: 'app-registeration',
@@ -7,23 +7,25 @@ import {AuthenticationService} from '../../services/authentication.service';
   styleUrls: ['./registeration.component.css']
 })
 export class RegisterationComponent implements OnInit {
-  user:any;
-  mode:number=0;
-  errorMessage:string;
-  constructor(private authService: AuthenticationService) { }
+
+  user: any;
+  mode: number = 0;
+  errorMessage: string;
+  constructor(private authService: AuthServiceService) { }
+
 
   ngOnInit() {
   }
 
   onRegister(user) {
     this.authService.register(user)
-      .subscribe(data =>{
-          this.user = data;
-          this.mode =1;
-        },
-        err =>{
+      .subscribe(data => {
+        this.user = data;
+        this.mode = 1;
+      },
+        err => {
           this.errorMessage = err.error.message;
-          this.mode =0;
+          this.mode = 0;
         })
   }
 }

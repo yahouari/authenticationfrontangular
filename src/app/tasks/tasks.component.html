@@ -1,20 +1,42 @@
-<!--<div class="container">
-  <p></p>
-  <button class="btn btn-danger" (click)="onNewTask()" *ngIf="authService.isAdmin()">New Task</button>
-  <table class="table table-striped">
-    <tr>
-      <th>ID</th><th>TaskName</th>
-    </tr>
-    <tr *ngFor="let t of tasks">
-      <td>{{t.id}}</td>
-      <td>{{t.taskName}}</td>
 
-    </tr>
-  </table>
+<div *ngIf="authService.isUser();then contenu_bon else contenu_pas_bon">Le contenu saisi ici sera ignoré.</div>
+<ng-template #contenu_bon><app-voyage-list></app-voyage-list></ng-template>
+<ng-template #contenu_pas_bon>
+  <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <div class="row">
+      <h1 class="col-md-6 col-lg-6 col-s-12">
+        <img src="assets/img/logo.png" id="farmer">
+        <a class="navbar-brand" href="accueil">Blad-e</a>
+        
 
-</div>-->
+      </h1>
 
-<div class="container">
-<h1 *ngIf="authService.isAdmin()" style="color: red">Admin</h1>
-<h1 *ngIf="authService.isUser()">User</h1>
-</div >
+    </div>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent" style="background: orange">
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item " style="background: orange">
+          <a class="nav-link" routerLink="/tasks">Home<span class="sr-only">(current)</span> </a>
+        </li>
+        <li class="nav-item" style="background: #FFC312">
+          <a class="btn" >Voyageurs</a>
+        </li>
+        <li class="nav-item " style="background: orange">
+          <a class="nav-link" href="#"> Voyages</a>
+        </li>
+        <li class="nav-item" style="background: #FFC312">
+          <a class="nav-link" routerLink="/adminparticipation">Participations</a>
+        </li>
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
+        <div class="row">
+          <div class="col-md-6">
+            <li><p class="navbar-text"> <h3 style="color: white; margin-top: 13px"></h3></li>
+          </div>
+          <div class="col-md-6">
+            <li><button class="btn btn-success" id="deconnecter" routerLink="/accueil"><i class="fas fa-sign-out-alt"></i>Se Deconnecter</button></li>
+          </div>
+        </div>
+      </ul>
+    </div>
+  </nav>
+</ng-template>

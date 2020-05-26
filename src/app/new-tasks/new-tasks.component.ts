@@ -9,7 +9,7 @@ export class NewTasksComponent implements OnInit {
 
   constructor() { }
 
-  ngOnInit() {
+  ngOnInit(): void {
   }
 
 }

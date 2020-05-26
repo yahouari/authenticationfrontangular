@@ -1,180 +1,175 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset='utf-8'>
+  <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+  <title>Voyages disponibles</title>
+  <meta name='viewport' content='width=device-width, initial-scale=1'>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+  <link rel='stylesheet' type='text/css' media='screen' href='user.component.css'>
 
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+  <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+  <link href="https://fonts.googleapis.com/css?family=Ubuntu&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Roboto+Slab&display=swap" rel="stylesheet">
 
 
 
-<p></p>
-
-<div class="container-fluid view1">
+</head>
+<body>
+  <div class="container-fluid view1">
     <div class="container-fluid">
       <div class="row">
         <h1 class="col-md-6 col-lg-6 col-s-12">
-          <img src="../../assets/img/logo.png" id="logo" > Blad-e
+          <img src="assets/img/logo.png" id="farmer">
+          <a class="navbar-brand" href="accueil">Blad-e</a>
         </h1>
-        <ul class="col-md-6 col-lg-6 col-s-12 nav1">
-
-        </ul>
-
       </div>
-
+    </div>
+  </div>
   <!--div class="alert alert-danger" *ngIf="mode==0 && errorMessage">
     <strong>{{errorMessage}}</strong>
   </div>-->
-      <div class="panel panel-success" *ngIf="mode==1">
-  <div class="panel-heading">
-    <strong>Registration Success</strong>
+  <div class="panel panel-success" *ngIf="mode==1">
+    <div class="panel-heading">
+      <strong>Registration Success</strong>
+    </div>
+    <div class="panel-body">
+      <ul class="list-group">
+        <li class="list-group-item"> Your ID :{{user.id}} </li>
+        <li class="list-group-item"> Your username :{{user.username}} </li>
+        <li class="list-group-item"> Your name:{{user.nom}} </li>
+        <li class="list-group-item"> Your role:<h2 style="color: red"> User </h2> </li>
+
+      </ul>
+    </div>
   </div>
-  <div class="panel-body">
-  <ul class="list-group">
-    <li class="list-group-item"> Your ID :{{user.id}} </li>
-    <li class="list-group-item"> Your username :{{user.username}} </li>
-    <li class="list-group-item"> Your role:{{user.nom}} </li>
-    <li class="list-group-item"> Your role:<h2 style="color: red"   > User </h2> </li>
 
 
-  </ul>
+  <div class="example-container mat-elevation-z8">
+    <div id="ins" class="col-md-7 col-sm-6 col-xs-12 " *ngIf="mode==0">
+      <div class="panel panel-default">
+        <div class="panel-heading clearfix"><h1 class="text-center" style="margin-top: 15px">Inscription</h1></div>
+        <div class="panel-body">
+          <mat-card class="example-card">
+            <form #f="ngForm" name="form" [formGroup]="form">
+              <mat-form-field class="example-full-width">
 
-</div>
+                <mat-label>Email</mat-label>
+                <input matInput type="email" class="form-input" placeholder="xyz@email.com"
+                       formControlName="username" [ngClass]="{'is-invalid':form.get('username').touched && form.get('username').invalid}" ngModel required
+                      >
+              </mat-form-field>
+              <mat-form-field class="example-full-width">
 
-</div>
+                <mat-label>Prénom</mat-label>
+                <input matInput type="text" class="form-input" placeholder="Prenom"
+                       formControlName="prenom" [ngClass]="{'is-invalid':form.get('prenom').touched && form.get('prenom').invalid}" ngModel required
+                       >
+              </mat-form-field>
+              <mat-form-field class="example-full-width">
+                <mat-label>Nom</mat-label>
+                <input matInput type="text" class="form-input" placeholder="Nom"
+                       formControlName="nom" [ngClass]="{'is-invalid':form.get('nom').touched && form.get('nom').invalid}" ngModel required
+                      >
 
+              </mat-form-field>
+              <mat-form-field class="example-full-width">
+                <mat-label>Année de naissance</mat-label>
+                <input matInput type="number" class="form-input" placeholder="2020" pattern="\d{4}"
+                       formControlName="datenaiss" [ngClass]="{'is-invalid':form.get('datenaiss').touched && form.get('datenaiss').invalid}" ngModel required
+                       >
 
+              </mat-form-field>
+              <mat-form-field class="example-full-width">
+                <mat-label>Lieu de naissance</mat-label>
+                <input matInput type="text" class="form-input" placeholder="Lieu"
+                       formControlName="lieunaiss" [ngClass]="{'is-invalid':form.get('lieunaiss').touched && form.get('lieunaiss').invalid}" ngModel required
+                       >
 
+              </mat-form-field>
+              <mat-form-field class="example-full-width">
+                <mat-label>Numéro de téléphone</mat-label>
+                <input matInput type="text" class="form-input" placeholder="+(212)611111111"
+                       formControlName="tel" [ngClass]="{'is-invalid':form.get('tel').touched && form.get('tel').invalid}" ngModel required
+                       >
 
+              </mat-form-field>
+              
+              <mat-form-field class="example-full-width">
+                <mat-label>Mot de passe</mat-label>
+                <input matInput type="password" class="form-input" placeholder="abc21"
+                       formControlName="password" [ngClass]="{'is-invalid':form.get('password').touched && form.get('password').invalid}" ngModel required>
 
-
-
-  <div id="ins" class="col-md-7 col-sm-6 col-xs-12 "  *ngIf="mode==0">
-    <div class="panel panel-default"  >
-      <div class="panel-heading "  ><h1 class="text-center">Inscription</h1> </div>
-      <div class="panel-body" >
-
-        <form #f="ngForm" name="form" [formGroup]="form">
-
-          <div class="form-group">
-
-            <label class="control-label"><h2>E-mail</h2></label>
-            <input type="email" class="form-control"  placeholder="xyz@email.com"
-                   formControlName="username" [ngClass]="{'is-invalid':form.get('username').touched && form.get('username').invalid}" ngModel required />
-            <div class="invalid-feedback">
-              <div><h6>Email is required</h6></div>
-            </div>
-          </div>
-          <br>
-          <br>
-
-          <div class="form-group">
-
-            <label class="control-label"><h2>Prenom</h2></label>
-            <input type="text" class="form-control"  placeholder="Prenom"
-                   formControlName="prenom" [ngClass]="{'is-invalid':form.get('prenom').touched && form.get('prenom').invalid}" ngModel required />
-            <div class="invalid-feedback">
-              <div><h6>Prenom is required</h6></div>
-            </div>
-          </div>
-          <br>
-          <br>
-
-          <div class="form-group">
-
-            <label class="control-label"><h2>Nom</h2></label>
-            <input type="text" class="form-control"  placeholder="Nom"
-                   formControlName="nom" [ngClass]="{'is-invalid':form.get('nom').touched && form.get('nom').invalid}" ngModel required />
-            <div class="invalid-feedback">
-              <div><h6>Name is required</h6></div>
-            </div>
-          </div>
-          <br>
-          <br>
-
-
-          <div class="form-group">
-
-            <label class="control-label"><h2>Annee Naissance </h2></label>
-            <input type="number" class="form-control"  placeholder="2020" pattern="\d{4}"
-                   formControlName="datenaiss" [ngClass]="{'is-invalid':form.get('datenaiss').touched && form.get('datenaiss').invalid}" ngModel required />
-            <div class="invalid-feedback">
-              <div><h6>Annee is required (4 digits )</h6></div>
-            </div>
-          </div>
-          <br>
-          <br>
-
-          <div class="form-group">
-
-            <label class="control-label"><h2>Lieu Naissance</h2></label>
-            <input type="text" class="form-control"  placeholder="Lieu"
-                   formControlName="lieunaiss" [ngClass]="{'is-invalid':form.get('lieunaiss').touched && form.get('lieunaiss').invalid}" ngModel required />
-            <div class="invalid-feedback">
-              <div><h6>Lieu Naissance is required</h6></div>
-            </div>
-          </div>
-          <br>
-          <br>
+              </mat-form-field>
+              <mat-form-field class="example-full-width">
+                <mat-label>Confirmer mot de passe</mat-label>
+                <input matInput type="password" class="form-input" placeholder="abc21"
+                       formControlName="repassword" [ngClass]="{'is-invalid':form.get('repassword').touched && form.get('repassword').invalid}" ngModel required />
+              </mat-form-field>
+              <br>
+              <br>
 
 
+              <button class="btn btn-success" [disabled]="!form.valid" (click)="onRegister(f.value)">S'inscrire</button>
+            </form>
+          </mat-card>
+        </div>
 
-          <div class="form-group">
 
-            <label class="control-label"><h2>Tel</h2></label>
-            <input type="text" class="form-control"  placeholder="+(212)611111111"
-                   formControlName="tel" [ngClass]="{'is-invalid':form.get('tel').touched && form.get('tel').invalid}" ngModel required />
-            <div class="invalid-feedback">
-              <div><h6>Tel is required</h6> </div>
-            </div>
-          </div>
-          <br>
-          <br>
-          <br>
+        <div class="alert alert-danger" *ngIf="mode==0 && errorMessage">
+          <strong>{{errorMessage}}</strong>
+        </div>
+      </div>
+    </div>
+  </div>
+  <footer class="site-footer">
+    <div class="container">
+      <div class="row">
+        <div class="col-sm-12 col-md-6">
+          <h6>About</h6>
+          <p class="text-justify">Blad-e est un site  qui vous permet de découvrir ce que cache le  magnifique Royaume du Maroc .</p>
+        </div>
 
-          <div class="form-group">
-
-            <label class="control-label"><h2>Mot de Passe</h2></label>
-            <input type="password" class="form-control"  placeholder="abc21"
-                   formControlName="password" [ngClass]="{'is-invalid':form.get('password').touched && form.get('password').invalid}" ngModel required />
-            <div class="invalid-feedback">
-              <div><h6> required</h6></div>
-            </div>
-          </div>
-          <br>
-          <br>
-          <div class="form-group">
-
-            <label class="control-label"><h2>Confirmez Mot de Passe</h2></label>
-            <input type="password" class="form-control"  placeholder="abc21"
-                   formControlName="repassword" [ngClass]="{'is-invalid':form.get('repassword').touched && form.get('repassword').invalid}"  ngModel required />
-            <div class="invalid-feedback">
-              <div><h6> required</h6></div>
-            </div>
-          </div>
-          <br>
-          <br>
+        <div class="col-xs-6 col-md-3">
+          <h6>Tags</h6>
+          <ul class="footer-links">
+            <li><a>Maroc</a></li>
+            <li><a>Nature</a></li>
+            <li><a>Plage</a></li>
+            <li><a>Desert</a></li>
+            <li><a>Culture</a></li>
+            <li><a>Voyage</a></li>
 
 
 
+          </ul>
+        </div>
 
+        <div class="col-xs-6 col-md-3">
+          <h6>Contact info</h6>
+          <ul class="footer-links">
+            <li><a href="https://www.gmail.com">projetblad.e@gmail.com</a></li>
+            <li><a href="">+212 639273688</a></li>
 
-          <button   class="btn btn-success"  [disabled]="!form.valid" (click)="onRegister(f.value)">S'inscrire</button>
-
-        </form>
-
+          </ul>
+        </div>
+      </div>
+      <hr>
+    </div>
+    <div class="container">
+      <div class="row">
+        <div class="col-md-8 col-sm-6 col-xs-12">
+          <p class="copyright-text">
+            Copyright &copy; 2020 All Rights Reserved by
+            <a routerLink="/accueil">Blad-e</a>.
+          </p>
+        </div>
 
 
       </div>
-
-
-
-
-      <div class="alert alert-danger" *ngIf="mode==0 && errorMessage">
-        <strong>{{errorMessage}}</strong>
-      </div>
-
-  </div>
-
-</div>
-</div>
-</div>
-<app-footer></app-footer>
-
-
-
+    </div>
+  </footer>
+</body>
+</html>
+          

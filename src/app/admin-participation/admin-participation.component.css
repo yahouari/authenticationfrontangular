@@ -1,0 +1,21 @@
+.fixed-panel {
+  min-height: 10;
+  max-height: 10;
+  overflow-y: scroll;
+}
+.table {
+  background: rgb(0,0,0,0.5);
+}
+html, body {
+  background: url(camel-person-blue-sky-desert.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  margin: 0;
+  padding: 0;
+  background-attachment: fixed;
+}
+
+#farmer {
+  width: 77px;
+  height: 77px;
+}

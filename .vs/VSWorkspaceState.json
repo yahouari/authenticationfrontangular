@@ -1,0 +1,14 @@
+{
+  "ExpandedNodes": [
+    "",
+    "\\src",
+    "\\src\\app",
+    "\\src\\app\\admin-participation",
+    "\\src\\app\\enregistrer-participation",
+    "\\src\\app\\tasks",
+    "\\src\\app\\voyage-list",
+    "\\src\\assets\\img"
+  ],
+  "SelectedNode": "\\src\\app\\enregistrer-participation\\enregistrer-participation.component.html",
+  "PreviewInSolutionExplorer": false
+}

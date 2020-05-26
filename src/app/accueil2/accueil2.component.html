@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset='utf-8'>
+  <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+  <title>Blad_e</title>
+  <meta name='viewport' content='width=device-width, initial-scale=1'>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+  <link rel='stylesheet' type='text/css' media='screen' href='accueil2.component.css'>
+  <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+  <link href="https://fonts.googleapis.com/css?family=Ubuntu&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Roboto+Slab&display=swap" rel="stylesheet">
+
+</head>
+<body>
+  <div class="container-fluid view1">
+    <div class="container-fluid">
+      <div class="row">
+        <h1 class="col-md-6 col-lg-6 col-s-12"><img src="assets/img/logo.png" id="farmer">Blad-e</h1>
+        <ul class="col-md-6 col-lg-6 col-sm-12 nav1">
+          <li><button class="btn btn-success" id="deconnecter" routerLink="/accueil"><i class="fas fa-sign-out-alt"></i>Se Deconnecter</button></li>
+        </ul>
+      </div>
+    </div>
+    <div class="bodyView container">
+      <h1 class="text-center" id="titre">Découvrez le Maroc à travers des voyages spéciaux</h1>
+      <div class="row" id="home">
+        <div class="col-lg-6 col-md-6 " id="imgHome">
+        </div>
+        <div class="col-lg-6 col-md-6 colonne2">
+          <ul>
+            <li><h5><a style="color: white" routerLink=""><i class="fa fa-envelope-open-o "></i>Hospitalité</a></h5></li>
+            <li><h5><a style="color: white" routerLink=""><i class="fa fa-user "></i>Guide Voyageur </a></h5></li>
+            <li><h5><a style="color: white" routerLink="/voyages"><i class="fa fa-road "></i>Voyages disponibles</a></h5></li>
+            <li><h5><a style="color: white" href="accueil/#contact">&nbsp;<i class="fa fa-info "></i>&nbsp;Contactez nous</a></h5></li>
+          </ul>
+        </div>
+      </div>
+
+    </div>
+  </div>
+  <div class="container-fluid padding">
+    <h1 class="text-center text-dark ">Nos Catégories</h1>
+    <nav class="navbar navbar-light bg-light search2 ">
+      <form class="form-inline">
+        <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+        <button class="btn btn-outline-success my-2 my-sm-0" id="serach2" type="submit">Search</button>
+      </form>
+    </nav>
+  </div>
+  <div class="row padding">
+    <div class="col-md-4">
+      <div class="card">
+        <img class="card-img-top" src="assets/img/nature.jpg">
+        <div class="card-body">
+          <h4 class="card-title">Nature</h4>
+          <p class="card-text"> Plongez dans le  coeur des forêts pittoresques , plages extraordinaires et montagnes gigantesques !</p>
+          <a routerLink="/voyages" class="btn btn-outline-secondary">Voir les voyages </a>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-4">
+      <div class="card">
+        <img class="card-img-top" src="assets/img/desert.jpg">
+        <div class="card-body">
+          <h4 class="card-title">Desert</h4>
+          <p class="card-text"> Vivez des expériences au beau milieu des graines dorés !</p>
+          <a routerLink="/voyages" class="btn btn-outline-secondary">Voir les voyages</a>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-4">
+      <div class="card">
+        <img class="card-img-top" src="assets/img/culture.jpg">
+        <div class="card-body">
+          <h4 class="card-title">Culture</h4>
+          <p class="card-text"> Atirré par les traditions , l'artisanat et le style marocain? Rendez-vous ici !</p>
+          <a routerLink="/voyages" class="btn btn-outline-secondary">Voir les voyages</a>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="container-fluid padding">
+    <h1 class="text-center text-dark "> Nos meilleurs voyages </h1>
+    <nav class="navbar navbar-light bg-light search2 ">
+    </nav>
+  </div>
+  <div class="row padding">
+    <div class="col-md-4">
+      <div class="card">
+        <img class="card-img-top" src="assets/img/11.jpg">
+        <div class="card-body" style="  background: linear-gradient(to right, #ffff00 28%, #ff9966 68%);">
+          <h4 class="card-title">Chefchaouen</h4>
+          <p class="card-text"> La perle bleue" : est une ville du Rif ,réputée pour ses bâtiments de ton bleu.</p>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-4">
+      <div class="card">
+        <img class="card-img-top" src="assets/img/33.jpg">
+        <div class="card-body" style="  background: linear-gradient(to right, #ffff00 28%, #ff9966 68%); ">
+          <h4 class="card-title">Ait Heddou</h4>
+          <p class="card-text"> "Le bijou" : Situé à Ouarzazate et inscrit sur la liste du patrimoine mondial de l'UNESCO.</p>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-4">
+      <div class="card">
+        <img class="card-img-top" src="assets/img/22.jpg">
+        <div class="card-body" style=" background: linear-gradient(to right, #ffff00 28%, #ff9966 68%);">
+          <h4 class="card-title">Marrakech</h4>
+          <p class="card-text "> Marrakech: La médina est une cité médiévale fortifiée et densément peuplée datant de l'Empire berbère, avec des allées entremêlées tel un labyrinthe, où les souks animés vendent des étoffes et des bijoux traditionnels</p>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <footer class="site-footer">
+    <div class="container">
+      <div class="row">
+        <div class="col-sm-12 col-md-6">
+          <h6>About</h6>
+          <p class="text-justify">Blad-e est un site  qui vous permet de découvrir ce que cache le  magnifique Royaume du Maroc .</p>
+        </div>
+        <div class="col-xs-6 col-md-3">
+          <h6>Tags</h6>
+          <ul class="footer-links">
+            <li><a>Maroc</a></li>
+            <li><a>Nature</a></li>
+            <li><a>Plage</a></li>
+            <li><a>Desert</a></li>
+            <li><a>Culture</a></li>
+            <li><a>Voyage</a></li>
+
+          </ul>
+        </div>
+        <div id="contact" class="col-xs-6 col-md-3">
+          <h6>Contact info</h6>
+          <ul class="footer-links">
+            <li><a href="https://www.gmail.com">projetblad.e@gmail.com</a></li>
+            <li><a href="">+212 639273688</a></li>
+          </ul>
+        </div>
+      </div>
+      <hr>
+    </div>
+    <div class="container">
+      <div class="row">
+        <div class="col-md-8 col-sm-6 col-xs-12">
+          <p class="copyright-text">
+            Copyright &copy; 2020 All Rights Reserved by
+            <a routerLink="/accueil">Blad-e</a>.
+          </p>
+        </div>
+
+      </div>
+    </div>
+  </footer>
+  <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+</body>
+</html>
+

@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset='utf-8'>
+  <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+  <title>Voyages disponibles</title>
+  <meta name='viewport' content='width=device-width, initial-scale=1'>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+
+
+  <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+  <link href="https://fonts.googleapis.com/css?family=Ubuntu&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Roboto+Slab&display=swap" rel="stylesheet">
+  <style>
+    table, th, td {
+      
+      width: 1000px;
+      
+    }
+
+    th, td {
+      padding: 10px;
+    }
+  </style>
+
+
+</head>
+<body>
+
+  <div class="container-fluid view1">
+    <div class="container-fluid">
+      <div class="row">
+        <h1 class="col-md-6 col-lg-6 col-s-12">
+          <img src="assets/img/logo.png" id="farmer">
+          <a class="navbar-brand" href="accueil">Blad-e</a>
+          <button class="btn btn-success" id="deconnecter" routerLink="/accueil"><i class="fas fa-sign-out-alt"></i>Se Deconnecter</button>
+      
+      </h1>
+
+    </div>
+    </div>
+  </div>
+  <div class="panel panel-primary">
+    <br />
+    <div class="panel-body fixed-panel">
+      <table class="table table" *ngIf="participations"  align="center" style="margin: 0px auto;">
+        <thead>
+          <tr>
+            <th>Numéro Participation</th>
+            <th>Nom Voyageur</th>
+            <th>Destination</th>
+            <th>Nombre de personnes</th>
+            <th>Date de participation</th>
+            <th>Actions</th>
+
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let v of participations ">
+            <td><font color="#fff">{{v.idpff}}</font></td>
+            <td><font color="#fff">{{v.nom}}</font></td>
+            <td><font color="#fff">{{v.destination}}</font></td>
+            <td><font color="#fff">{{v.nombreDePersonnes}}</font></td>
+            <td><font color="#fff">{{v.dateParticipation}}</font></td>
+
+            <td>
+              <input type="button" id="button1" value="Delete" routerLink="/adminparticipation" (click)="OnClick(v.idpff)" />
+
+            </td>
+          </tr>
+        </tbody>
+
+
+      </table>
+    </div>
+  </div>
+
+
+</body>
+</html>

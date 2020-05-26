@@ -1,0 +1,59 @@
+.card {
+  height: 370px;
+  margin-top: 150px;
+  margin-bottom: 120px;
+  width: 400px;
+  background-color: rgba(0,0,0,0.5) !important;
+}
+
+
+
+.card-header h3 {
+  color: white;
+}
+
+
+
+.input-group-prepend span {
+  width: 50px;
+  background-color: #FFC312;
+  color: black;
+  border: 0 !important;
+}
+
+
+
+
+
+
+
+.login_btn {
+  color: black;
+  background-color: #FFC312;
+  width: 100px;
+  margin-right: 140px;
+}
+
+  .login_btn:hover {
+    color: black;
+    background-color: white;
+  }
+
+.container-fluid {
+  background-image: url("acc.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.links {
+  color: white;
+}
+
+#logo {
+  width: 77px;
+  height: 77px;
+}
+
+.links a {
+  margin-left: 4px;
+}

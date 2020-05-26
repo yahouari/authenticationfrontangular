@@ -1,0 +1,140 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset='utf-8'>
+  <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+  <title>Voyages disponibles</title>
+  <meta name='viewport' content='width=device-width, initial-scale=1'>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+  <link rel='stylesheet' type='text/css' media='screen' href='enregistrer-participation.component.css'>
+
+
+  <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+  <link href="https://fonts.googleapis.com/css?family=Ubuntu&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Roboto+Slab&display=swap" rel="stylesheet">
+
+
+
+</head>
+<body>
+
+  <div class="container-fluid view1">
+    <div class="container-fluid">
+      <div class="row">
+        <h1 class="col-md-6 col-lg-6 col-s-12">
+          <img src="assets/img/logo.png" id="farmer">
+          <a class="navbar-brand" href="accueil2">Blad-e</a>
+
+        </h1>
+        <ul class="col-md-6 col-lg-6 col-sm-12 nav1">
+          <li><button class="btn btn-success" id="deconnecter" routerLink="/accueil"><i class="fas fa-sign-out-alt"></i>Se Deconnecter</button></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <div class="panel panel-success" *ngIf="mode==1">
+    <div class="panel-heading">
+    </div>
+    <div class="panel-body">
+      <ul class="list-group">
+        <li class="list-group-item"> <strong>Participation réussie</strong> </li>
+
+      </ul>
+      <button mat-raised-button color="warn" routerLink="/voyages">Revenir à la liste des voyages</button>
+    </div>
+  </div>
+  <div class="example-container mat-elevation-z8">
+    <h2 class="headertekst">Enregistrer Participation</h2>
+    <div class="example-loading-shade"
+         *ngIf="isLoadingResults">
+      <mat-spinner *ngIf="isLoadingResults"></mat-spinner>
+    </div>
+
+    <mat-card class="example-card">
+      <form [formGroup]="ParticipationForm" (ngSubmit)="onFormSubmit()">
+
+        <mat-form-field class="example-full-width">
+
+          <mat-label>Destination</mat-label>
+          <input matInput type="text" style="color: rgb(255, 255, 255);" class="form-input" [(value)]="destination" readonly
+                 [errorStateMatcher]="matcher">
+        </mat-form-field>
+        <mat-form-field class="example-full-width">
+
+          <mat-label>Prix pour une seule personne</mat-label>
+          <input matInput type="text" style="color: rgb(255, 255, 255);" class="form-input" [(value)]="prix" readonly
+                 [errorStateMatcher]="matcher">
+        </mat-form-field>
+        <mat-form-field class="example-full-width">
+          <mat-label>nombre De Personnes</mat-label>
+          <input matInput type="number" placeholder="nombreDePersonnes" class="form-input" formControlName="nombreDePersonnes"
+                 [errorStateMatcher]="matcher">
+          <mat-error>
+            <span *ngIf="!ParticipationForm.get('nombreDePersonnes').valid && ParticipationForm.get('nombreDePersonnes').touched">entrer le nombre de personnes s'il vous plait</span>
+          </mat-error>
+        </mat-form-field>
+
+
+        <div class="button-row">
+
+          <button class="btn btn-success" type="submit" [disabled]="!ParticipationForm.valid" mat-flat-button color="primary" (click)="OnCl()"><mat-icon>save</mat-icon></button>
+          <span style="padding-left:68px;"></span>
+          <button mat-raised-button color="warn" routerLink="/voyages">Annuler</button>
+        </div>
+        <div #paypal></div>
+      </form>
+    </mat-card>
+  </div>
+  <footer class="site-footer">
+    <div class="container">
+      <div class="row">
+        <div class="col-sm-12 col-md-6">
+          <h6>About</h6>
+          <p class="text-justify">Blad-e est un site  qui vous permet de découvrir ce que cache le  magnifique Royaume du Maroc .</p>
+        </div>
+
+        <div class="col-xs-6 col-md-3">
+          <h6>Tags</h6>
+          <ul class="footer-links">
+            <li><a>Maroc</a></li>
+            <li><a>Nature</a></li>
+            <li><a>Plage</a></li>
+            <li><a>Desert</a></li>
+            <li><a>Culture</a></li>
+            <li><a>Voyage</a></li>
+
+
+
+          </ul>
+        </div>
+
+        <div class="col-xs-6 col-md-3">
+          <h6>Contact info</h6>
+          <ul class="footer-links">
+            <li><a href="https://www.gmail.com">projetblad.e@gmail.com</a></li>
+            <li><a href="">+212 639273688</a></li>
+
+          </ul>
+        </div>
+      </div>
+      <hr>
+    </div>
+    <div class="container">
+      <div class="row">
+        <div class="col-md-8 col-sm-6 col-xs-12">
+          <p class="copyright-text">
+            Copyright &copy; 2020 All Rights Reserved by
+            <a routerLink="/accueil">Blad-e</a>.
+          </p>
+        </div>
+
+
+      </div>
+    </div>
+  </footer>
+</body>
+</html>
+
+
+

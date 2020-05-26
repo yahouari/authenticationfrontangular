@@ -1,27 +1,22 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-import {LoginComponent} from './login/login.component';
-import {TasksComponent} from './tasks/tasks.component';
-import {NewTasksComponent} from './new-tasks/new-tasks.component';
-import {RegisterationComponent} from './registeration/registeration.component';
-import {MainpageComponent} from './mainpage/mainpage.component';
-import {UserComponent} from './user/user.component';
-import {FooterComponent} from './footer/footer.component';
+import { EnregistrerParticipationComponent } from './enregistrer-participation/enregistrer-participation.component';
+import { VoyageListComponent } from './voyage-list/voyage-list.component';
+import { AuthentificationComponent } from './authentification/authentification.component';
+import { AccueilComponent } from './accueil/accueil.component';
+import { PaiementComponent } from './paiement/paiement.component';
+import { AdminParticipationComponent } from './admin-participation/admin-participation.component';
+import { TasksComponent } from './tasks/tasks.component';
+import { NewTasksComponent } from './new-tasks/new-tasks.component';
+import { RegisterationComponent } from './registeration/registeration.component';
+import { UserComponent } from './user/user.component';
+import { Accueil2Component } from './accueil2/accueil2.component';
 
-const routes: Routes = [
-  {
-    path: 'login',
-    component: LoginComponent
-  },
-  {
-    path: 'tasks',
-    component: TasksComponent
-  },
-  {
-    path: 'footer',
-    component: FooterComponent
-  },
-  {
+const routes: Routes = [{ path: 'add', component: EnregistrerParticipationComponent }, { path: '', redirectTo: 'voyage', pathMatch: 'full' },
+  { path: 'login', component: AuthentificationComponent },
+  { path: 'accueil', component: AccueilComponent },
+  { path: 'paiement', component: PaiementComponent },
+  { path: 'adminparticipation', component: AdminParticipationComponent }, {
     path: 'new-task',
     component: NewTasksComponent
   },
@@ -29,22 +24,25 @@ const routes: Routes = [
     path: 'register',
     component: RegisterationComponent
   },
-  {
-    path: 'mainpage',
-    component: MainpageComponent
-  },
+  
   {
     path: 'registera',
     component: UserComponent
+  }, {
+    path: 'tasks',
+    component: TasksComponent
   },
   {
-    path: '',
-    redirectTo: 'mainpage', pathMatch: 'full'
-  }
-];
+    path: 'accueil2',
+    component: Accueil2Component
+  },
+  {
+    path: 'voyages', component: VoyageListComponent, data: { title: 'Liste de voyages' }
+  }];
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes)],
+  imports: [RouterModule.forRoot(routes), RouterModule],
+
   exports: [RouterModule]
 })
 export class AppRoutingModule { }
