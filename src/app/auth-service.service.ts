@@ -54,5 +54,10 @@ export class AuthServiceService {
     return false;
 
   }
+  public getVoyageurs() {
+    return this.http.get("http://localhost:9090/voyageurs");
+  }
+  
+  
   
 }

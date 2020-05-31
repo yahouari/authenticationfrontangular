@@ -14,5 +14,19 @@ export class AppComponent {
   onLogout() {
     this.authService.logout();
     this.router.navigateByUrl('/login');
+
   }
+
+  /*
+   body {
+  margin: 0;
+  height: 100%;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+  background-image: url("backgr.jpg");
+  /* Center and scale the image nicely 
+  background-position: center;
+background - repeat: no - repeat;
+background - size: cover;
+background - attachment: fixed;
+}*/
 }

@@ -3,12 +3,9 @@
     "",
     "\\src",
     "\\src\\app",
-    "\\src\\app\\admin-participation",
-    "\\src\\app\\enregistrer-participation",
-    "\\src\\app\\tasks",
-    "\\src\\app\\voyage-list",
-    "\\src\\assets\\img"
+    "\\src\\app\\favoris",
+    "\\src\\app\\tasks"
   ],
-  "SelectedNode": "\\src\\app\\enregistrer-participation\\enregistrer-participation.component.html",
+  "SelectedNode": "\\src\\app\\tasks\\tasks.component.html",
   "PreviewInSolutionExplorer": false
 }

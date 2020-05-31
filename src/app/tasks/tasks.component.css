@@ -2,3 +2,16 @@
   width: 77px;
   height: 77px;
 }
+.navbar-fixed-top {
+  height: 5px; /* Whatever you want. */
+}
+td {
+  background: white;
+  padding: 10px;
+}
+
+th {
+  background: orange;
+  color: black;
+  padding: 10px;
+}

@@ -2,41 +2,152 @@
 <div *ngIf="authService.isUser();then contenu_bon else contenu_pas_bon">Le contenu saisi ici sera ignoré.</div>
 <ng-template #contenu_bon><app-voyage-list></app-voyage-list></ng-template>
 <ng-template #contenu_pas_bon>
-  <nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <nav class="navbar navbar-expand-sm bg-dark navbar-dark sticky-top">
     <div class="row">
       <h1 class="col-md-6 col-lg-6 col-s-12">
-        <img src="assets/img/logo.png" id="farmer">
-        <a class="navbar-brand" href="accueil">Blad-e</a>
-        
-
+        <a class="navbar-brand  py-0" href="accueil"><img src="assets/img/logo.png" id="farmer"></a>
       </h1>
 
     </div>
-    <div class="collapse navbar-collapse" id="navbarSupportedContent" style="background: orange">
-      <ul class="navbar-nav mr-auto">
-        <li class="nav-item " style="background: orange">
-          <a class="nav-link" routerLink="/tasks">Home<span class="sr-only">(current)</span> </a>
-        </li>
-        <li class="nav-item" style="background: #FFC312">
-          <a class="btn" >Voyageurs</a>
-        </li>
-        <li class="nav-item " style="background: orange">
-          <a class="nav-link" href="#"> Voyages</a>
-        </li>
-        <li class="nav-item" style="background: #FFC312">
-          <a class="nav-link" routerLink="/adminparticipation">Participations</a>
-        </li>
-      </ul>
-      <ul class="nav navbar-nav navbar-right">
-        <div class="row">
-          <div class="col-md-6">
-            <li><p class="navbar-text"> <h3 style="color: white; margin-top: 13px"></h3></li>
-          </div>
-          <div class="col-md-6">
-            <li><button class="btn btn-success" id="deconnecter" routerLink="/accueil"><i class="fas fa-sign-out-alt"></i>Se Deconnecter</button></li>
-          </div>
+
+    <ul class="navbar-nav mr-auto">
+
+      <li class="nav-item">
+        <a class="nav-link" (click)="ongetvoyageurs()">Voyageurs</a>
+      </li>
+      <li class="nav-item ">
+        <a class="nav-link" href="#"> Voyages</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" (click)="ongetparticipation()">Participations</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" (click)="ongetfavoris()">Favoris</a>
+      </li>
+    </ul>
+    <ul class="form-inline mt-2 mt-md-0">
+      <div class="row">
+        <div class="col-md-6">
+          <li><p class="navbar-text"> <h3 style="color: white; margin-top: 25px"></h3></li>
         </div>
-      </ul>
-    </div>
+        <div class="form-inline mt-2 mt-md-0">
+          <li><button class="btn btn-outline-success my-2 my-sm-0" id="deconnecter" routerLink="/accueil"><i class="fas fa-sign-out-alt"></i>Se Deconnecter</button></li>
+        </div>
+      </div>
+    </ul>
+
   </nav>
+  <br />
+  <br />
+
+  <div class="container">
+
+    <table class="table table-striped" *ngIf="mode==2">
+      <thead>
+        <tr>
+          <th>Numéro Participation</th>
+          <th>Nom Voyageur</th>
+          <th>Destination</th>
+          <th>Nombre de personnes</th>
+          <th>Date de participation</th>
+          <th>Actions</th>
+
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let v of participations ">
+          <td><font>{{v.idpff}}</font></td>
+          <td><font>{{v.nom}}</font></td>
+          <td><font>{{v.destination}}</font></td>
+          <td><font>{{v.nombreDePersonnes}}</font></td>
+          <td><font>{{v.dateParticipation}}</font></td>
+
+          <td>
+            <input type="button" id="button1" value="Delete" routerLink="/adminparticipation" (click)="OnClick(v.idpff)" />
+
+          </td>
+        </tr>
+      </tbody>
+
+
+    </table>
+  </div>
+
+
+  <div class="container">
+    <table class="table table-striped" *ngIf="mode==1">
+      <thead>
+        <tr bgcolor="#adff2f">
+          <th>Email</th>
+          <th>Prenom</th>
+          <th>Nom</th>
+          <th>Date de Naissance</th>
+          <th>Lieu De Naissance</th>
+          <th>Tel</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let t of voyageurs">
+          <td>{{t.mail}}</td>
+          <td>{{t.prenom}}</td>
+          <td>{{t.nom}}</td>
+          <td>{{t.anneeDeNaissance}}</td>
+          <td>{{t.lieuDeNaissance}}</td>
+          <td>{{t.tel}}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="container">
+    <table id="table table-striped" *ngIf="mode==3">
+      <thead>
+        <tr>
+
+          <th>Favoris</th>
+          <th>Voyageur</th>
+          <th>Intitulé</th>
+          <th>Description</th>
+          <th>Prix</th>
+
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let todo of favoris">
+
+          <td>{{todo.id_favoris}}</td>
+          <td> {{todo.mail}}</td>
+          <td> {{todo.nom_favoris}}</td>
+          <td> {{todo.description}}</td>
+          <td> {{todo.prix}}</td>
+
+
+        </tr>
+      </tbody>
+
+
+      
+
+    </table>
+    </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 </ng-template>

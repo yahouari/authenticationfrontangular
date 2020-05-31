@@ -11,6 +11,7 @@ import { NewTasksComponent } from './new-tasks/new-tasks.component';
 import { RegisterationComponent } from './registeration/registeration.component';
 import { UserComponent } from './user/user.component';
 import { Accueil2Component } from './accueil2/accueil2.component';
+import { FavorisComponent } from './favoris/favoris.component';
 
 const routes: Routes = [{ path: 'add', component: EnregistrerParticipationComponent }, { path: '', redirectTo: 'voyage', pathMatch: 'full' },
   { path: 'login', component: AuthentificationComponent },
@@ -35,6 +36,8 @@ const routes: Routes = [{ path: 'add', component: EnregistrerParticipationCompon
   {
     path: 'accueil2',
     component: Accueil2Component
+  }, {
+    path: 'favoris', component: FavorisComponent
   },
   {
     path: 'voyages', component: VoyageListComponent, data: { title: 'Liste de voyages' }

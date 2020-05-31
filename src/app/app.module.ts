@@ -51,9 +51,10 @@ import { UserComponent } from './user/user.component';
 import { RegisterationComponent } from './registeration/registeration.component';
 import { AuthInterceptor } from './auth-interceptor';
 import { Accueil2Component } from './accueil2/accueil2.component';
+import { FavorisComponent } from './favoris/favoris.component';
 @NgModule({
   declarations: [
-    AppComponent, EnregistrerParticipationComponent, VoyageListComponent, AuthentificationComponent, AccueilComponent, PaiementComponent, AdminParticipationComponent, NewTasksComponent, RegiterationComponent, TasksComponent, UserComponent, RegisterationComponent, Accueil2Component 
+    AppComponent, EnregistrerParticipationComponent, VoyageListComponent, AuthentificationComponent, AccueilComponent, PaiementComponent, AdminParticipationComponent, NewTasksComponent, RegiterationComponent, TasksComponent, UserComponent, RegisterationComponent, Accueil2Component, FavorisComponent 
   ],
   imports: [
     BrowserModule, FormsModule, ReactiveFormsModule, NgxPayPalModule, HttpClientModule, AppRoutingModule, BrowserAnimationsModule, //<<<< and here
