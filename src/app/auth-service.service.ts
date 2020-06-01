@@ -7,7 +7,7 @@ import { from } from 'rxjs';
   providedIn: 'root'
 })
 export class AuthServiceService {
-  private host = 'http://localhost:8080';
+  private host = 'https://blad-e-auth.herokuapp.com';
   private jwtToken: string;
   private roles: Array<any> = [];
   constructor(private http: HttpClient) {
@@ -16,7 +16,8 @@ export class AuthServiceService {
     return this.http.post(this.host + '/login', user, { observe: 'response' });
   }
   register(user) {
-    return this.http.post(this.host + '/users', user);
+    return this.http.post(this.host + '/users', user,
+      { headers: new HttpHeaders({ 'Authorization': this.jwtToken }) });
   }
 
   saveToken(jwt: string) {
@@ -55,7 +56,7 @@ export class AuthServiceService {
 
   }
   public getVoyageurs() {
-    return this.http.get("http://localhost:9090/voyageurs");
+    return this.http.get("https://blad-e.herokuapp.com/voyageurs");
   }
   
   

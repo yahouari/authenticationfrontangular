@@ -27,9 +27,7 @@
       </div>
     </div>
   </div>
-  <!--div class="alert alert-danger" *ngIf="mode==0 && errorMessage">
-    <strong>{{errorMessage}}</strong>
-  </div>-->
+
   <div class="panel panel-success" *ngIf="mode==1">
     <div class="panel-heading">
       <strong>Registration Success</strong>
@@ -114,11 +112,6 @@
               <button class="btn btn-success" [disabled]="!form.valid" (click)="onRegister(f.value)">S'inscrire</button>
             </form>
           </mat-card>
-        </div>
-
-
-        <div class="alert alert-danger" *ngIf="mode==0 && errorMessage">
-          <strong>{{errorMessage}}</strong>
         </div>
       </div>
     </div>

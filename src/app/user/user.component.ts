@@ -42,8 +42,7 @@ export class UserComponent implements OnInit {
         this.mode = 1;
       },
         err => {
-          this.errorMessage = err.error.message;
-          this.mode = 0;
+          console.log(err);
         })
   }
 

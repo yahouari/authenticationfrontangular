@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpHeaders, HttpClient, HttpParams } from '@angular/common/http';
-import { Observable, of } from 'rxjs';
-import { catchError } from 'rxjs/operators';
+import { Observable, of, throwError } from 'rxjs';
+import { catchError, map } from 'rxjs/operators';
 const httpOptions = {
   headers: new HttpHeaders({ 'Content-Type': 'application/json' })
 };
@@ -23,7 +23,7 @@ export class FavorisServiceService {
     };
   }
   public getOnClicked(destination: string, login: string) {
-    return this.http.post('http://localhost:9090/favoris',
+    return this.http.post('https://blad-e.herokuapp.com/favoris',
       {
         destination: destination,
         mail: login,
@@ -32,15 +32,15 @@ export class FavorisServiceService {
       httpOptions).pipe(catchError(this.handleError('getOnClicked', destination)));
   }
   public getFavoris() {
-    return this.http.get('http://localhost:9090/favoriss');
+    return this.http.get('https://blad-e.herokuapp.com/favoriss');
   }
   public getFavorisList(login: string) {
     let params = new HttpParams();
     params = params.append('mail', login);
-    return this.http.get('http://localhost:9090/favoris', { params: params });
+    return this.http.get('https://blad-e.herokuapp.com/favoris', { params: params });
   }
   public deleteFavoris(id: number) {
-    return this.http.delete("http://localhost:9090/favoris/delete/" + id + "");
+    return this.http.delete("https://blad-e.herokuapp.com/favoris/delete/" + id + "");
   }
  
 }

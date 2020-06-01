@@ -8,7 +8,7 @@ import { Participation } from './Participation';
 const httpOptions = {
   headers: new HttpHeaders({ 'Content-Type': 'application/json' })
 };
-const baseurl = 'http://localhost:9090/Enregistrer-Participation';
+const baseurl = 'https://blad-e.herokuapp.com/Enregistrer-Participation';
 @Injectable({
   providedIn: 'root'
 })
@@ -26,7 +26,7 @@ export class ParticipationService {
     };
   }
   public getOnClicked(idVoyageur: string, destination: string, nombreDePersonnes: number) {
-    return this.http.post('http://localhost:9090/Enregistrer-Participation',
+    return this.http.post('https://blad-e.herokuapp.com/Enregistrer-Participation',
       {
         mail: idVoyageur,
         destination: destination,
@@ -37,13 +37,13 @@ export class ParticipationService {
   
 
   public getDestination() {
-    return this.http.get("http://localhost:9090/voyages");
+    return this.http.get("https://blad-e.herokuapp.com/voyages");
   }
   public getParticipationList() {
-    return this.http.get("http://localhost:9090/participations");
+    return this.http.get("https://blad-e.herokuapp.com/participations");
   }
   public deleteParticipation(id: number) {
-    return this.http.delete("http://localhost:9090/participations/delete/" + id + "");
+    return this.http.delete("https://blad-e.herokuapp.com/participations/delete/" + id + "");
   }
 }
 

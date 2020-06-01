@@ -1,6 +1,6 @@
-import { Observable } from 'rxjs';
+
 import { VoyageService } from '../voyage.service';
-import { Voyage } from '../voyage';
+
 import { Component, OnInit, Output } from '@angular/core';
 import { Router } from '@angular/router';
 import { SafeStyle, DomSanitizer } from '@angular/platform-browser';

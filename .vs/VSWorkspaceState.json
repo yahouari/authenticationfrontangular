@@ -3,9 +3,8 @@
     "",
     "\\src",
     "\\src\\app",
-    "\\src\\app\\favoris",
-    "\\src\\app\\tasks"
+    "\\src\\app\\voyage-list"
   ],
-  "SelectedNode": "\\src\\app\\tasks\\tasks.component.html",
+  "SelectedNode": "\\package.json",
   "PreviewInSolutionExplorer": false
 }
