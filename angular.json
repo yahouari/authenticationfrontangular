@@ -127,5 +127,8 @@
       }
     }
   },
-  "defaultProject": "angular8-springboot-client"
+  "defaultProject": "angular8-springboot-client",
+  "cli": {
+    "analytics": false
+  }
 }

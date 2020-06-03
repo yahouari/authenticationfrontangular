@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset='utf-8'>
+  <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+  <title>S'inscrire</title>
+  <meta name='viewport' content='width=device-width, initial-scale=1'>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+  <link rel='stylesheet' type='text/css' media='screen' href='bo-update-voyage.component.css'>
+
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
+</head>
+<body>
+<!--Custom styles-->
+<div class="container-fluid">
+  <div class="row">
+    <h1 class="col-md-6 col-lg-6 col-s-12">
+      <img src="../../assets/img/logo.png" id="logo"  > Blad-e
+    </h1>
+    <ul class="col-md-6 col-lg-6 col-s-12 nav1">
+
+    </ul>
+
+  </div>
+  <div class="container">
+
+    <div class="d-flex justify-content-center h-100">
+      <div class="card">
+        <div class="card-header">
+          <h3>Update Voyage</h3>
+
+        </div>
+        <div class="card-body">
+
+          <div  style="width: 400px;">
+  <form (ngSubmit)="onSubmit()">
+    <div class="form-group">
+      <label class="control-label">Destination</label>
+      <input type="text" class="form-control" id="destination" name="destination" ngModel [(ngModel)]="voyage.destination">
+    </div>
+
+    <div class="form-group">
+      <label class="control-label">Categorie</label>
+      <input type="text" class="form-control" id="type" name="type" ngModel [(ngModel)]="voyage.categorie">
+    </div>
+
+    <div class="form-group">
+      <label class="control-label">Description</label>
+      <input type="text" class="form-control" id="description" name="description" ngModel [(ngModel)]="voyage.Description">
+    </div>
+
+    <div class="form-group">
+      <label class="control-label">Prix</label>
+      <input type="number" class="form-control" id="prix" name="prix" ngModel [(ngModel)]="voyage.prix">
+    </div>
+
+    <button type="submit" class="btn btn-success">Update</button>
+  </form>
+</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<footer class="site-footer">
+  <div class="container">
+    <div class="row">
+      <div class="col-sm-12 col-md-6">
+        <h6>About</h6>
+        <p class="text-justify">Blad-e est un site  qui vous permet de découvrir ce que cache le  magnifique Royaume du Maroc .</p>
+      </div>
+
+      <div class="col-xs-6 col-md-3">
+        <h6>Tags</h6>
+        <ul class="footer-links">
+          <li><a>Maroc</a></li>
+          <li><a>Nature</a></li>
+          <li><a>Plage</a></li>
+          <li><a>Desert</a></li>
+          <li><a>Culture</a></li>
+          <li><a>Voyage</a></li>
+
+
+
+        </ul>
+      </div>
+
+      <div id="contact" class="col-xs-6 col-md-3">
+        <h6>Contact info</h6>
+        <ul class="footer-links">
+          <li><a href="https://www.gmail.com">projetblad.e@gmail.com</a></li>
+          <li><a href="">+212 639273688</a></li>
+
+        </ul>
+      </div>
+    </div>
+    <hr>
+  </div>
+  <div class="container">
+    <div class="row">
+      <div class="col-md-8 col-sm-6 col-xs-12">
+        <p class="copyright-text">Copyright &copy; 2020 All Rights Reserved by
+          <a routerLink="/bo-accueil">Blad-e</a>.
+        </p>
+      </div>
+
+
+    </div>
+  </div>
+</footer>
+</body>
+
+</html>

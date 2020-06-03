@@ -12,8 +12,14 @@ import { RegisterationComponent } from './registeration/registeration.component'
 import { UserComponent } from './user/user.component';
 import { Accueil2Component } from './accueil2/accueil2.component';
 import { FavorisComponent } from './favoris/favoris.component';
+import {GuideVoyageurComponent} from './guide-voyageur/guide-voyageur.component';
+import {HospitaliteComponent} from './hospitalite/hospitalite.component';
+import { BoListVoyagesComponent } from './bo-list-voyages/bo-list-voyages.component';
+import { BoCreatVoyageComponent } from './bo-creat-voyage/bo-creat-voyage.component';
+import { BoUpdateVoyageComponent } from './bo-update-voyage/bo-update-voyage.component';
+import { BoAccueilComponent } from './bo-accueil/bo-accueil.component';
 
-const routes: Routes = [{ path: 'add', component: EnregistrerParticipationComponent }, { path: '', redirectTo: 'voyage', pathMatch: 'full' },
+const routes: Routes = [ { path: '', redirectTo: 'voyage', pathMatch: 'full' },
   { path: 'login', component: AuthentificationComponent },
   { path: 'accueil', component: AccueilComponent },
   { path: 'paiement', component: PaiementComponent },
@@ -21,11 +27,18 @@ const routes: Routes = [{ path: 'add', component: EnregistrerParticipationCompon
     path: 'new-task',
     component: NewTasksComponent
   },
+  { path: 'add', component: EnregistrerParticipationComponent },
   {
     path: 'register',
     component: RegisterationComponent
   },
-  
+  {
+    path: 'hospitalite', component: HospitaliteComponent
+  },
+
+  {
+    path: 'guide', component: GuideVoyageurComponent
+  },
   {
     path: 'registera',
     component: UserComponent
@@ -38,6 +51,19 @@ const routes: Routes = [{ path: 'add', component: EnregistrerParticipationCompon
     component: Accueil2Component
   }, {
     path: 'favoris', component: FavorisComponent
+  },
+  {
+    path: 'bo-accueil', component: BoAccueilComponent
+  },
+  {
+    path: 'bo-create', component: BoCreatVoyageComponent
+  },
+  {
+    path: 'bo-update/:id', component: BoUpdateVoyageComponent
+  },
+
+  {
+    path: 'bo-list', component: BoListVoyagesComponent
   },
   {
     path: 'voyages', component: VoyageListComponent, data: { title: 'Liste de voyages' }

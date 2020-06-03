@@ -7,7 +7,7 @@ import { EnregistrerParticipationComponent } from './enregistrer-participation/e
 import { FormsModule } from '@angular/forms';
 import { ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations'
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatInputModule } from '@angular/material/input';
 import { MatAutocompleteModule } from '@angular/material/autocomplete';
 import { MatDatepickerModule } from '@angular/material/datepicker';
@@ -52,9 +52,16 @@ import { RegisterationComponent } from './registeration/registeration.component'
 import { AuthInterceptor } from './auth-interceptor';
 import { Accueil2Component } from './accueil2/accueil2.component';
 import { FavorisComponent } from './favoris/favoris.component';
+import { HospitaliteComponent } from './hospitalite/hospitalite.component';
+import { GuideVoyageurComponent } from './guide-voyageur/guide-voyageur.component';
+import { BoAccueilComponent } from './bo-accueil/bo-accueil.component';
+
+import { BoCreatVoyageComponent } from './bo-creat-voyage/bo-creat-voyage.component';
+import { BoListVoyagesComponent } from './bo-list-voyages/bo-list-voyages.component';
+import { BoUpdateVoyageComponent } from './bo-update-voyage/bo-update-voyage.component';
 @NgModule({
   declarations: [
-    AppComponent, EnregistrerParticipationComponent, VoyageListComponent, AuthentificationComponent, AccueilComponent, PaiementComponent, AdminParticipationComponent, NewTasksComponent, RegiterationComponent, TasksComponent, UserComponent, RegisterationComponent, Accueil2Component, FavorisComponent 
+    AppComponent, EnregistrerParticipationComponent, VoyageListComponent, AuthentificationComponent, AccueilComponent, PaiementComponent, AdminParticipationComponent, NewTasksComponent, RegiterationComponent, TasksComponent, UserComponent, RegisterationComponent, Accueil2Component, FavorisComponent, HospitaliteComponent, GuideVoyageurComponent, BoAccueilComponent, BoCreatVoyageComponent, BoListVoyagesComponent, BoUpdateVoyageComponent
   ],
   imports: [
     BrowserModule, FormsModule, ReactiveFormsModule, NgxPayPalModule, HttpClientModule, AppRoutingModule, BrowserAnimationsModule, //<<<< and here
