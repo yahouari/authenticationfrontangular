@@ -1,0 +1,108 @@
+<link href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<script src="//netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js"></script>
+<script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<!------ Include the above in your HEAD tag ---------->
+
+
+<body>
+
+   <header>
+    <div class="a">
+        <img src="assets\img\logo.png" href="#" width="150" heigh="150"class="logo">
+        
+        <div class="card">
+        <img src="assets\img\kls.jpg" alt="Anass Khayat" style="width:100%" class="pdp">
+        <h1 class="nom">Anass Khayat</h1>
+        <p class="idvoy">Id Voyageur:1484</p>
+
+        <a href="#" class=message><i class="fa fa-gears"></i></a>
+       
+        </div>
+      <div class="topnav">
+         <a  href="#home"><i class="fa fa-tree"></i>  Voyages</a>
+         <a href="#"><i class="fa fa-address-card"></i>  Mon Compte</a>
+         <a href="#"><i class="fa fa-star"></i>  Favoris</a>
+         <a class="active" href="http://localhost:4200/search"><i class="fa fa-book"></i>  Historique</a>
+         <a href="#"><i class="fa fa-sign-out"></i>  Se déconnecter</a>
+       </div>
+       
+
+
+    </div>
+      
+      
+   </header>
+     
+    
+   <div class="b">
+    
+    <h1 class="bienv">Bienvenue dans votre historique de voyages</h1>
+    
+    <div class="row">
+               <div id="custom-search-input">
+                                <div class="input-group col-md-12" style="text-align: center">
+                                    <input type="text" class="search-query form-control" placeholder="Search With destination"  name="id" [(ngModel)]="id"/>
+                                    <span class="input-group-btn">
+                                        <button class="btn btn-danger" type="button" (click)="findvoyagebyid()">
+                                            <span class=" glyphicon glyphicon-search"></span>
+                                        </button>
+                                    </span>
+                                </div>
+                            </div>
+    </div>
+    
+    
+  
+        <table class="table table-striped custab">
+    <thead>
+        <tr>
+            <th>Nom</th>
+            <th>destination</th>           
+            <th>Date de participation</th>
+            <th>Action</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let histo of voyages">
+            <td>{{histo.nom}}</td>
+            <td>{{histo.destination}}</td>  
+            <td>{{histo.dateParticipation}}</td>
+            <td class="text-center"><button class="btn" (click)="deleteVoyages(voyage.idpff)"><span class="glyphicon glyphicon-folder-close"></span></button><button type="button" class="btn btn-primary btn" [ngStyle]="(displayNavbar) ? {'visibility': 'visible'} : {'visibility': 'hidden'}">Evaluer</button></td>
+          </tr>
+    </tbody>
+    </table>
+</div>
+<div class="footer">
+    <div class="contain">
+    <div class="col">
+      <h1>About</h1>
+      <ul>
+        <li>Blad-e est un site qui vous permet de découvrir
+         ce que cache le magnifique Royaume du Maroc .</li>
+        
+      </ul>
+    </div>
+    <div class="col">
+      <h1>Tags</h1>
+      <ul>
+        <li>Maroc</li>
+        <li>Nature</li>
+        <li>Plage</li>
+        <li>Désert</li>
+        <li>Culture</li>
+        <li>Voyage</li>
+      </ul>
+    </div>
+    <div class="col">
+      <h1>Contact Info</h1>
+      <ul>
+        <li>projetblad.e@gmail.com</li>
+        <li>+212 639273688</li>
+        
+      </ul>
+    </div>
+    
+    </div></div></body>
+        
+    
