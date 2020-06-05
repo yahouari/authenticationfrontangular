@@ -71,6 +71,10 @@ const routes: Routes = [ { path: '', redirectTo: 'voyage', pathMatch: 'full' },
     path: 'bo-list', component: BoListVoyagesComponent
   },
   {
+    path: 'evaluation',
+    component: RegistrationComponent
+  },
+  {
     path: 'voyages', component: VoyageListComponent, data: { title: 'Liste de voyages' }
   }];
 
