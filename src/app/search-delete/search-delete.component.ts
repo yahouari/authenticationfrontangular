@@ -40,5 +40,9 @@ public deleteVoyages(id:number)
 resp.subscribe((data)=>this.voyages=data);
   }
 }
+  public onclicked(login: string, destination: string) {
+  this._interactionService.changeLogin(login);
+  this._interactionService.changeDestination(destination);
+}
 
 }
