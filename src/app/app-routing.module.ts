@@ -32,6 +32,11 @@ const routes: Routes = [ { path: '', redirectTo: 'voyage', pathMatch: 'full' },
     path: 'register',
     component: RegisterationComponent
   },
+                        {
+    path:'histo',
+    component:SearchDeleteComponent
+
+  },
   {
     path: 'hospitalite', component: HospitaliteComponent
   },
