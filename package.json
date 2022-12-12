@@ -33,7 +33,7 @@
     "angular-jwt": "^0.1.11",
     "angular2-jwt": "^0.2.3",
     "bootstrap": "^4.4.1",
-    "express": "^4.17.1",
+    "express": "^4.17.3",
     "jquery": "^3.5.1",
     "ngx-paypal": "^6.1.0",
     "path": "^0.12.7",
